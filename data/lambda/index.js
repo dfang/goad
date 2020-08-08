@@ -1,6 +1,8 @@
 var spawn = require("child_process").spawn;
 
 exports.handler = function(event, context) {
+    console.log(event.file);
+    console.log(event.args);
     child = spawn(event.file, event.args);
 
     child.stdout.on("data", function (data) {
